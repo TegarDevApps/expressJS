@@ -1,0 +1,110 @@
+###
+GET http://localhost:3000/api/users
+###
+GET http://localhost:3000/api/user/67a206374287a6c4e0b65191
+###
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "name" : "gg",
+    "email" : "gg@gmail.com"
+}
+
+###
+PUT http://localhost:3000/api/user/67ab733eaf0ecad78fe58026
+Content-Type: application/json
+
+{
+    "name" : "gg",
+    "email" : "gg@gmail.com"
+}
+
+###
+DELETE http://localhost:3000/api/user/
+
+
+# CATEGORIES REQUEST 
+###
+POST http://localhost:3000/api/categories
+Content-Type: application/json
+
+{
+    "name": "Outerwear"
+}
+
+# PRODUCTS REQUEST 
+
+# GET ALL PRODUCTS
+###
+
+
+GET http://localhost:3000/api/products
+###
+GET http://localhost:3000/api/products/67a73ae9ffd827cd005e3f13
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "category_id": "67a6c3fa10549e69720035b3",
+    "color": "Biru",
+    "size": ["M", "L"],
+    "price": 300000,
+    "stock": 15,
+    "image_url": "https://example.com/jaket.jpg",
+    "tags": ["Casual", "Trendy"]    
+}
+
+###
+PUT http://localhost:3000/api/products/67aa6660e4412eeef5efbe6c
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "category_id": "67a6c3fa10549e69720035b3",
+    "color": "Hitam",
+    "size": ["M", "L", "XL"],
+    "price": 350000,
+    "stock": 10,
+    "image_url": "https://example.com/jaket-baru.jpg",
+    "tags": ["Stylish", "Winter"]
+}
+
+
+#DELETE PRODUCT
+###
+DELETE http://localhost:3000/api/products/67ab72d3af0ecad78fe58020
+
+###
+GET http://localhost:3000/api/orders
+###
+GET http://localhost:3000/api/orders/67abe699aef0fe96a67e9e10
+###
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+    "user_id": "67a206374287a6c4e0b65191",
+    "products": [
+        {
+            "product_id": "67a737d0c323e9182a51ca5d",
+            "quantity": 2
+        },
+        {
+            "product_id": "67a73ae9ffd827cd005e3f13",
+            "quantity": 1
+        }
+    ]
+}
+
+###
+PUT http://localhost:3000/api/orders/67abe699aef0fe96a67e9e10
+Content-Type: application/json
+
+{
+    "status": "Success"
+}
+###
+DELETE http://localhost:3000/api/orders/
